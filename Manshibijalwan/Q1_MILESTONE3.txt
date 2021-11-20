@@ -1,0 +1,81 @@
+README: To remove duplicates from the given array, using a C++ program.
+
+#include<iostream>
+
+using namespace std;
+ 
+// Function to remove duplicate elements
+
+int removeDuplicates(int arr[], int n)
+{
+
+
+    if (n==0 || n==1)
+
+        return n;
+ 
+
+    int temp[n];
+ 
+
+    // Start traversing elements
+
+    int j = 0;
+
+    for (int i=0; i<n-1; i++)
+ 
+
+       
+
+        if (arr[i] != arr[i+1])
+
+            temp[j++] = arr[i];
+ 
+           temp[j++] = arr[n-1];
+ 
+
+    // Modify original array
+
+    for (int i=0; i<j; i++)
+
+        arr[i] = temp[i];
+ 
+
+    return j;
+}
+ 
+// Driver code
+
+int main()
+{
+
+    int arr[100],size;
+    cout<<"Enter the size of the array."<<endl;
+    cin>>size;
+    cout<<"Enter the elements of the array."<<endl;
+    
+    for (int i=0; i<size; ++i)
+    {
+      cin>>arr[i];
+    }
+
+    int k = sizeof(arr) / sizeof(arr[0]);
+ 
+
+    // removeDuplicates() returns new size of
+
+    // array.
+
+    k = removeDuplicates(arr, k);
+ 
+
+    // Print updated array
+
+    for (int i=0; i<k; i++)
+
+       cout << arr[i] << " ";
+ 
+
+    return 0;
+}
+
