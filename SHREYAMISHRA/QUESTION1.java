@@ -1,0 +1,15 @@
+
+        class Solution {
+    public int removeDuplicates(int[] nums) {
+        int ptr = 0;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[ptr] != nums[i]) {
+                nums[++ptr] = nums[i];
+            }
+        }
+         
+        return ptr + 1;
+    }
+}
+ //time complexity:O(N)
+//DONE WITH TWO POINTER APPROACH
